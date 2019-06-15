@@ -33,7 +33,7 @@ const RootQuery = new GraphQLObjectType({
             type: UserType,
             args: { id: { type: GraphQLID } },
             resolve(parent, args) {
-                return finder.find(books, { id: args.id });
+                return finder.find(users, { id: args.id });
             }
         }
     }
