@@ -1,12 +1,24 @@
 const mongoose = require ('mongoose');
+const { RESTDataSource } = require('apollo-datasource-rest');
+
 const Schema = mongoose.Schema;
 
-const bored {
-  activity: String
-  accessibility: Float
-  type: String
-  participants: Int,
-  price: Float,
+const boredSchema = new Schema({
+  activity: String,
+  accessibility: Number,
+  type: String,
+  participants: Number,
+  price: Number,
   link: String,
-  key: Int
+  key: Number
+});
+
+class BoredAPI extends RESTDataSource {
+      constructor() {
+          super();
+          this.baseURL = 'http://www.boredapi.com/';
+      }
+      async getBored(key) {
+          return this.get(`api/activity?key=${key}`);
+      }
 }
