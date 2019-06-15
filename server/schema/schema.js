@@ -8,7 +8,8 @@ const {
     GraphQLSchema,
     GraphQLID,
     GraphQLInt,
-    GraphQLFloat
+    GraphQLFloat,
+    GraphQLNonNull
 } = graphql;
 
 const UserType = new GraphQLObjectType({
