@@ -1,0 +1,141 @@
+/* Universal */
+
+html, body {
+
+  margin: 0;
+  padding: 0;
+
+}
+
+html {
+
+  font-size: 18px;
+
+}
+
+body {
+
+  background-color: #212121;
+
+}
+
+/* Main */
+
+.main {
+
+  height: 100vh;
+  width: 100%;
+  background-image: url('img/bk.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* Content */
+
+.content-box {
+
+  height: 55%;
+  width: 45%;
+  background-color: #f2f2f2;
+  border-radius: 6px;
+
+}
+
+.content-box .welcome {
+
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.content-box .welcome h1 {
+
+  font-family: Helvetica, sans-serif;
+  font-weight: 700;
+  color: #212121;
+  text-align: center;
+  font-size: 30px;
+
+}
+
+.content-box .welcome p {
+
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+  color: #212121;
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+  font-size: 18px;
+
+}
+
+.content-box .action {
+
+  height: 30%;
+  background-color: #D8D8D8;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.content-box .action a {
+
+  background-size: cover;
+  height: 58px;
+  width: 194px;
+  display: block;
+  margin: 15px;
+  transition: all 0.4s ease;
+  border-radius: 100px;
+
+}
+
+.content-box .action a:hover {
+
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+  transition: all 0.4s ease;
+
+}
+
+.content-box .action a:nth-child(1) {
+
+  background-image: url('img/signupbtn.png');
+
+}
+
+.content-box .action a:nth-child(2) {
+
+  background-image: url('img/loginbtn.png');
+
+}
+
+@media only screen and (max-width: 1000px) {
+
+  .content-box {
+
+    height: 90%;
+    width: 85%;
+
+
+  }
+
+  .content-box .action {
+
+    flex-direction: column;
+
+  }
+
+}
