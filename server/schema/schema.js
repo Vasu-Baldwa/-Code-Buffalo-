@@ -6,7 +6,6 @@ const {
     GraphQLObjectType,
     GraphQLString,
     GraphQLSchema,
-    GraphQLID,
     GraphQLInt,
     GraphQLFloat,
     GraphQLNonNull
@@ -15,7 +14,7 @@ const {
 const UserType = new GraphQLObjectType({
     name: "User",
     fields: () => ({
-        userID: { type: GraphQLID },
+        userID: { type: GraphQLString},
         passwd: { type: GraphQLString },
         avgPrice: { type: GraphQLFloat },
         priceN: { type: GraphQLInt }
@@ -28,7 +27,7 @@ const RootQuery = new GraphQLObjectType({
     fields: {
         User: {
             type: UserType,
-            args: { id: { type: GraphQLID } },
+            args: { id: { type: GraphQLString } },
             resolve(parent, args) {
                 //console.log(arguments);
                 return User.findById(args.id);
@@ -43,14 +42,14 @@ const Mutation = new GraphQLObjectType({
         addUser: {
             type: UserType,
             args: {
-                userID: { type: GraphQLID },
+                userID: { type: GraphQLString },
                 passwd: { type: GraphQLString },
                 avgPrice: { type: GraphQLFloat },
                 priceN: {type: GraphQLInt}
             },
             resolve(parent, args) {
                 let tempUser = new User({
-                    userID:{type: new GraphQLNonNull(GraphQLID)},
+                    userID:{type: new GraphQLNonNull(GraphQLString)},
                     passwd: { type: new GraphQLNonNull(GraphQLString) },
                     avgPrice: { type: new GraphQLNonNull(GraphQLFloat) },
                     priceN: { type: new GraphQLNonNull(GraphQLInt) }
