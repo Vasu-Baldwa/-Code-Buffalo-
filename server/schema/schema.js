@@ -26,6 +26,7 @@ const UserType = new GraphQLObjectType({
     })
 });
 
+
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
@@ -33,7 +34,8 @@ const RootQuery = new GraphQLObjectType({
             type: UserType,
             args: { id: { type: GraphQLID } },
             resolve(parent, args) {
-                return finder.find(userArray, { id: args.id });
+                console.log(arguments);
+                return finder.find(userArray, { userID: args.id });
             }
         }
     }
