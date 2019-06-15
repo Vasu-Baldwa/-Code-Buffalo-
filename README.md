@@ -2,7 +2,7 @@
 
 Team 30
 
-*Robbie
-*Nick
-*Vasu
-*Dan
+* Robbie
+* Nick
+* Vasu
+* Dan
