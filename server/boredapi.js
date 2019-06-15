@@ -13,6 +13,9 @@ const boredSchema = new Schema({
   key: Number
 });
 
+// talk to BoredAPI, may or may not work.
+//const baseURL = `http://www.boredapi.com/`
+
 class BoredAPI extends RESTDataSource {
       constructor() {
           super();
