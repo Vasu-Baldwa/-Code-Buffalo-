@@ -12,9 +12,9 @@ const {
 } = graphql;
 
 const UserType = new GraphQLObjectType({
-    name: "User",
+    name: 'User',
     fields: () => ({
-        userID: { type: GraphQLString},
+        userID: { type: GraphQLString },
         passwd: { type: GraphQLString },
         avgPrice: { type: GraphQLFloat },
         priceN: { type: GraphQLInt }
@@ -45,11 +45,11 @@ const Mutation = new GraphQLObjectType({
                 userID: { type: GraphQLString },
                 passwd: { type: GraphQLString },
                 avgPrice: { type: GraphQLFloat },
-                priceN: {type: GraphQLInt}
+                priceN: { type: GraphQLInt }
             },
             resolve(parent, args) {
                 let tempUser = new User({
-                    userID:{type: new GraphQLNonNull(GraphQLString)},
+                    userID: { type: new GraphQLNonNull(GraphQLString) },
                     passwd: { type: new GraphQLNonNull(GraphQLString) },
                     avgPrice: { type: new GraphQLNonNull(GraphQLFloat) },
                     priceN: { type: new GraphQLNonNull(GraphQLInt) }
