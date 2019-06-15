@@ -1,6 +1,7 @@
 const graphql = require('graphql');
 //const finder = require('lodash');
 const User = require("../user.js");
+const { ApolloServer, gql } = require('apollo-server');
 
 const {
     GraphQLObjectType,
@@ -21,16 +22,44 @@ const UserType = new GraphQLObjectType({
     })
 });
 
+const typeDefs = gql`
+  type Event {
+    activity: String!
+    accessibility: Float!
+    type: String!
+    participants: Int!
+    price: Float!
+    key: Int!
+  }
+
+  type Query {
+    event(price: Float!): Event
+    events: [Event]
+  }
+`;
+
 
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
         User: {
             type: UserType,
-            args: { id: { type: GraphQLString } },
+            args: { id: { type: new GraphQLNonNull(GraphQLString) } },
             resolve(parent, args) {
                 //console.log(arguments);
                 return User.findById(args.id);
+            }
+        },
+        event: {
+            args: { price: { type: new GraphQLNonNull(GraphQLFloat) } },
+            resolve(parent, args) {
+                event: (root, { price }, { dataSources }) =>
+                    dataSources.BoredAPI.getEventP(price)
+            }
+        },
+        rndEvent: {
+            resolve() {
+                events: (root, args, { dataSources }) => dataSources.BoredAPI.getRandomEvent()
             }
         }
     }
