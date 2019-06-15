@@ -1,4 +1,4 @@
-# -Code-Buffalo-
+# {Code-Buffalo}
 
 Team 30
 
