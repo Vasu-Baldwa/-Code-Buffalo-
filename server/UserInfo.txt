@@ -1,0 +1,4 @@
+{name: "Vasu", password: "AB07ACBB1E496801937ADFA772424BF7", averagePrice: "0.12", priceN: "5"}
+{name: "Robbie", password: "ADD3718E5A6A5C02963014D768281EC7", averagePrice: "0.42", priceN: "70"}
+{name: "Nick", password: "20C393C7DBBA581C1167EB6A01F32007", averagePrice: "0.4", priceN: "17"}
+{name: "Dan", password: "C68DAC8FDC0A01F604FE1C44099934B7", averagePrice: "0.25", priceN: "255"}
