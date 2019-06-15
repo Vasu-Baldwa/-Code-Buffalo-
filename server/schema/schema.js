@@ -1,7 +1,7 @@
 const graphql = require('graphql');
 const finder = require('lodash');
 
-var users= [
+var userArray= [
     {userID: "1", passwd: "pass", avgPrice: 1.23, priceN: 3 },
     {userID: "2", passwd: "pass2", avgPrice: 1.5, priceN: 5 },
     {userID: "3", passwd: "pas", avgPrice: 6, priceN: 27 }
@@ -33,7 +33,7 @@ const RootQuery = new GraphQLObjectType({
             type: UserType,
             args: { id: { type: GraphQLID } },
             resolve(parent, args) {
-                return finder.find(users, { id: args.id });
+                return finder.find(userArray, { id: args.id });
             }
         }
     }
