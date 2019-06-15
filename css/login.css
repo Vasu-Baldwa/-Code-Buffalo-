@@ -1,0 +1,148 @@
+/* Universal */
+
+html, body {
+
+  margin: 0;
+  padding: 0;
+
+}
+
+html {
+
+  font-size: 18px;
+
+}
+
+body {
+
+  background-color: #212121;
+
+}
+
+/* Main */
+
+.main {
+
+  height: 100vh;
+  width: 100%;
+  background-image: url('./bk.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* Content */
+
+.content-box {
+
+  height: 80%;
+  width: 45%;
+  background-color: #f2f2f2;
+  border-radius: 6px;
+
+}
+
+.content-box .welcome {
+
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.content-box .welcome h1 {
+
+  font-family: Helvetica, sans-serif;
+  font-weight: 700;
+  color: #212121;
+  text-align: center;
+  font-size: 30px;
+
+}
+
+.content-box .action {
+
+  height: 70%;
+  background-color: #D8D8D8;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+form {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+input[type="text"] {
+
+  border: none;
+  background-color: #fff;
+  height: 56px;
+  width: 100%;
+  border-radius: 100px;
+  outline: none;
+  font-size: 20px;
+  font-weight: 300;
+  color: #212121;
+  font-family: Helvetica, sans-serif;
+  margin: 20px;
+  text-indent: 30px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+
+}
+
+::placeholder {
+
+  color: #212121;
+  opacity: 1;
+
+}
+
+form button {
+
+  height: 58px;
+  width: 194px;
+  background-image: url('./loginbtn.png');
+  background-size: cover;
+  background-color: transparent;
+  border-radius: 100px;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+}
+
+form button:hover {
+
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+
+}
+
+@media only screen and (max-width: 1000px) {
+
+  .content-box {
+
+    height: 90%;
+    width: 85%;
+
+
+  }
+
+}
