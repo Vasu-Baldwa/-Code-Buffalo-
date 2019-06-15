@@ -27,14 +27,22 @@ const typeDefs = gql`
   }
 `;
 
+const resolvers = {
+    Query: {
+        event: (root, { price }, { dataSources }) =>
+            dataSources.BoredAPI.getEventP(price),
+        events: (root, args, { dataSources }) => dataSources.BoredAPI.getRandomEvent(),
+    }
+};
+
 app.use('/graphql', graphqlHTTP({
     typeDefs,
-    //resolvers,
+    resolvers,
+    schema,
+    graphiql: true,
     dataSources: () => ({
         BoredAPI: new BoredAPI(),
-    }),
-    schema,
-    graphiql: true
+    })
 }));
 
 app.listen(4000, () => {
