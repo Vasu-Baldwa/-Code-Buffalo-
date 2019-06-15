@@ -1,0 +1,161 @@
+/* Universal */
+
+html, body {
+
+  margin: 0;
+  padding: 0;
+
+}
+
+html {
+
+  font-size: 18px;
+
+}
+
+body {
+
+  background-color: #212121;
+
+}
+
+/* Main */
+
+.main {
+
+  height: 100vh;
+  width: 100%;
+  background-image: url('./bk.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* Nav */
+
+.nav {
+
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+}
+
+.nav .nav-info {
+
+  float: left;
+  padding-right: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+.nav .nav-info p:nth-child(1) {
+
+  color: #ffffff;
+  font-family: Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: right;
+  padding: 0;
+  margin: 0;
+  padding-top: 10px;
+
+}
+
+.nav .nav-info p:nth-child(2) {
+
+  color: #ffffff;
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: right;
+  padding: 0;
+  margin: 0;
+
+}
+
+.nav .nav-img {
+
+  float: right;
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease;
+
+}
+
+.nav .nav-img .dropdown-content {
+
+  display: none;
+  position: absolute;
+  background-image: url('./dropdown.png');
+  background-size: cover;
+  width: 54px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  z-index: 1;
+
+}
+
+.dropdown-content a {
+
+  color: #212121;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+
+}
+
+.dropdown-content a:nth-child(1) {
+
+  margin-top: 10px;
+
+}
+
+.nav-img:hover .dropdown-content {
+
+  display: block;
+  transition: all 0.3s ease;
+
+}
+
+.nav .nav-img img {
+
+  height: 50px;
+  width: 50px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+
+}
+
+/* Button Main */
+
+.main-button {
+
+  height: 50px;
+  width: 175px;
+  background-color: #ffffff;
+  border-radius: 100px;
+  position: absolute;
+  background-image: url('./mainbutton.png');
+  background-size: cover;
+  cursor: pointer;
+  transition: all 0.4s ease;
+
+}
+
+.main-button:hover {
+
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+  transition: all 0.4s ease;
+
+}
