@@ -1,0 +1,28 @@
+// This should query things
+
+{
+  User(id: "abc"){
+    userID
+    passwd
+    avgPrice
+    priceN
+  }
+}
+
+
+// add a new user, and show their data
+
+mutation {
+	addUser (
+    userID: "string",
+    passwd: "string",
+    avgPrice: 0.x,
+    priceN: int
+  ),
+  {
+    userID
+    passwd
+    avgPrice
+    priceN
+  }
+}
