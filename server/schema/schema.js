@@ -1,6 +1,7 @@
 const graphql = require('graphql');
 //const finder = require('lodash');
 const User = require("../user.js");
+const { ApolloServer, gql } = require('apollo-server');
 
 const {
     GraphQLObjectType,
@@ -20,6 +21,22 @@ const UserType = new GraphQLObjectType({
         priceN: { type: GraphQLInt }
     })
 });
+
+const typeDefs = gql`
+  type Event {
+    activity: String!
+    accessibility: Float!
+    type: String!
+    participants: Int!
+    price: Float!
+    key: Int!
+  }
+
+  type Query {
+    event(price: Float!): Event
+    events: [Event]
+  }
+`;
 
 
 const RootQuery = new GraphQLObjectType({
