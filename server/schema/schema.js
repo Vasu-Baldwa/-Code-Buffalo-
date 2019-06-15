@@ -44,14 +44,14 @@ const RootQuery = new GraphQLObjectType({
     fields: {
         User: {
             type: UserType,
-            args: { id: { type: GraphQLString } },
+            args: { id: { type: new GraphQLNonNull(GraphQLString) } },
             resolve(parent, args) {
                 //console.log(arguments);
                 return User.findById(args.id);
             }
         },
         event: {
-            args: { price: { type: GraphQLFloat } },
+            args: { price: { type: new GraphQLNonNull(GraphQLFloat) } },
             resolve(parent, args) {
                 event: (root, { price }, { dataSources }) =>
                     dataSources.BoredAPI.getEventP(price)

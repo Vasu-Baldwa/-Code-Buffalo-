@@ -7,7 +7,7 @@ class BoredAPI extends RESTDataSource {
         this.baseURL = 'https://www.boredapi.com/api/';
     }
 
-    async getEvent() {
+    async getRandomsEvent() {
         return this.get('activity');
     }
 

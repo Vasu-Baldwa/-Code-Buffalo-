@@ -29,7 +29,7 @@ const typeDefs = gql`
 
 app.use('/graphql', graphqlHTTP({
     typeDefs,
-    resolvers,
+    //resolvers,
     dataSources: () => ({
         BoredAPI: new BoredAPI(),
     }),
