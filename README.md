@@ -1,4 +1,4 @@
-# {Code-Buffalo}
+# {Code:Buffalo}
 
 Team 30
 
@@ -7,4 +7,4 @@ Team 30
 * Vasu
 * Dan
 
-*#Remember to Save
+# remember to save
