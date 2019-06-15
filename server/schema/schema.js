@@ -49,6 +49,18 @@ const RootQuery = new GraphQLObjectType({
                 //console.log(arguments);
                 return User.findById(args.id);
             }
+        },
+        event: {
+            args: { price: { type: GraphQLFloat } },
+            resolve(parent, args) {
+                event: (root, { price }, { dataSources }) =>
+                    dataSources.BoredAPI.getEventP(price)
+            }
+        },
+        rndEvent: {
+            resolve() {
+                events: (root, args, { dataSources }) => dataSources.BoredAPI.getRandomEvent()
+            }
         }
     }
 });
