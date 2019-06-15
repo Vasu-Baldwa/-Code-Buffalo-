@@ -1,5 +1,5 @@
 const graphql = require('graphql');
-const finder = require('lodash');
+//const finder = require('lodash');
 const User = require("../user.js");
 
 const {
@@ -8,7 +8,7 @@ const {
     GraphQLSchema,
     GraphQLID,
     GraphQLInt,
-    GraphQLloat
+    GraphQLFloat
 } = graphql;
 
 const UserType = new GraphQLObjectType({
@@ -29,8 +29,8 @@ const RootQuery = new GraphQLObjectType({
             type: UserType,
             args: { id: { type: GraphQLID } },
             resolve(parent, args) {
-                console.log(arguments);
-                return finder.find(userArray, { userID: args.id });
+                //console.log(arguments);
+                return User.findById(args.id);
             }
         }
     }
@@ -49,6 +49,7 @@ const Mutation = new GraphQLObjectType({
             },
             resolve(parent, args) {
                 let tempUser = new User({
+                    userID:{type: new GraphQLNonNull(GraphQLID)},
                     passwd: { type: new GraphQLNonNull(GraphQLString) },
                     avgPrice: { type: new GraphQLNonNull(GraphQLFloat) },
                     priceN: { type: new GraphQLNonNull(GraphQLInt) }
