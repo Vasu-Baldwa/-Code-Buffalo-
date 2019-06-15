@@ -1,11 +1,6 @@
 const graphql = require('graphql');
 const finder = require('lodash');
-
-var userArray= [
-    {userID: "1", passwd: "pass", avgPrice: 1.23, priceN: 3 },
-    {userID: "2", passwd: "pass2", avgPrice: 1.5, priceN: 5 },
-    {userID: "3", passwd: "pas", avgPrice: 6, priceN: 27 }
-]
+const User = require("../user.js");
 
 const {
     GraphQLObjectType,
@@ -13,7 +8,7 @@ const {
     GraphQLSchema,
     GraphQLID,
     GraphQLInt,
-    GraphQLFloat
+    GraphQLloat
 } = graphql;
 
 const UserType = new GraphQLObjectType({
@@ -41,6 +36,30 @@ const RootQuery = new GraphQLObjectType({
     }
 });
 
+const Mutation = new GraphQLObjectType({
+    name: 'Mutation',
+    fields: {
+        addUser: {
+            type: UserType,
+            args: {
+                userID: { type: GraphQLID },
+                passwd: { type: GraphQLString },
+                avgPrice: { type: GraphQLFloat },
+                priceN: {type: GraphQLInt}
+            },
+            resolve(parent, args) {
+                let tempUser = new User({
+                    passwd: { type: new GraphQLNonNull(GraphQLString) },
+                    avgPrice: { type: new GraphQLNonNull(GraphQLFloat) },
+                    priceN: { type: new GraphQLNonNull(GraphQLInt) }
+                });
+                return tempUser.save();
+            }
+        }
+    }
+})
+
 module.exports = new GraphQLSchema({
-    query: RootQuery
+    query: RootQuery,
+    mutation: Mutation
 });
