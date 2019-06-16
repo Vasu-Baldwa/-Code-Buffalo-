@@ -11,7 +11,7 @@ Team 30
 
 1. git clone and download this repository
 2. run `npm install` to dowload all modules
-3. type `node server.js` in the terminal to run the server which connects to BoardAPI
+3. type `node server.js` in the terminal to run the server which connects to BoredAPI
 4. type `node app.js` in the terminal to run the server which connects to our MongoDB user database
 4. navigate to the client folder in the repository
 5. double click `index.html` to view the website
