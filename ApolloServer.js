@@ -1,15 +1,5 @@
-const express = require('express');
-const graphqlHTTP = require('express-graphql');
-const schema = require('./schema/schema');
-const mongoose = require('mongoose');
 const { ApolloServer, gql } = require('apollo-server');
-
-const app = express();
-
-mongoose.connect("mongodb+srv://dbUser:dbuserpass@database-pkdd1.azure.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true });
-mongoose.connection.once("open", () => {
-    console.log("Connected to MongoDB");
-})
+//const BoredAPI = require(".//datasource");
 
 const typeDefs = gql`
   type Event {
@@ -35,16 +25,36 @@ const resolvers = {
     }
 };
 
-app.use('/graphql', graphqlHTTP({
+const server = new ApolloServer({
     typeDefs,
     resolvers,
-    schema,
-    graphiql: true,
     dataSources: () => ({
         BoredAPI: new BoredAPI(),
-    })
-}));
-
-app.listen(4000, () => {
-    console.log('now listening for requests on port 4000');
+    }),
 });
+
+server.listen().then(({ url }) => {
+    console.log("Server ready at ${url}");
+});
+
+const {RESTDataSource} = require('apollo-datasource-rest');
+
+
+class BoredAPI extends RESTDataSource {
+    constructor() {
+        super();
+        this.baseURL = 'https://www.boredapi.com/api/';
+    }
+
+    async getEvent() {
+        return this.get('activity');
+    }
+
+    async getEventP(price) {
+        const result = await this.get('activity', {
+            price
+        });
+
+        return result;
+    }
+};
