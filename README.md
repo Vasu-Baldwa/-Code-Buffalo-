@@ -17,8 +17,9 @@ Team 30
 5. double click `index.html` to view the website
 6. sign into the website using one of the following accounts:
 
-      username:             password:
-      "Vasu"                "foo bar baz"
-      "Robbie"              "xenotic"
-      "Nick"                "vasuismybestfriend"
-      "Dan"                 "UI/UXmaster"
+| Username | Password             |
+|----------|----------------------|
+| "Vasu"   | "foo bar baz"        |
+| "Robbie" | "xenotic"            |
+| "Nick"   | "vasuismybestfriend" |
+| "Dan"    | "UI/UXmaster"        |
