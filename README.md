@@ -1,6 +1,6 @@
 # {Code:Buffalo}
 
-#Go to the Final Submission Branch
+# Go to the Final Submission Branch
 
 Team 30
 
