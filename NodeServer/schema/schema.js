@@ -46,14 +46,16 @@ const Mutation = new GraphQLObjectType({
                 userID: { type: new GraphQLNonNull(GraphQLString) },
                 passwd: { type: new GraphQLNonNull(GraphQLString) },
                 avgPrice: { type: new GraphQLNonNull(GraphQLFloat) },
-                priceN: { type: new GraphQLNonNull(GraphQLInt) }
+                priceN: { type: new GraphQLNonNull(GraphQLInt) },
+                favorites: { type: new GraphQLNonNull(GraphQLString)}
             },
             resolve(parent, args) {
                 let tempUser = new User({
                     userID: args.userID,
                     passwd: args.passwd,
                     avgPrice: args.avgPrice,
-                    priceN: args.priceN
+                    priceN: args.priceN,
+                    favorites: args.favorites
                 });
                 return tempUser.save();
             }

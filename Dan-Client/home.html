@@ -15,6 +15,40 @@
 
     <section class="main">
 
+    <div id="myModal" class="modal">
+
+      <div class="modal-content">
+
+        <!-- <span class="close">&times;</span> -->
+        <div class="title">
+
+          <h1>New Activity Based On Your Interests 🎉</h1>
+
+        </div>
+
+        <div class="modal-data">
+
+          <div class="inner-modal-data">
+
+            <h2>~ Go Hiking With Friends ~</h2>
+            <p>Recreational Activity</p>
+            <h3>Rate This Activity</h3>
+            <div class="slidecontainer">
+
+              <input type="range" min="1" max="5" value="5" class="slider" id="myRange">
+
+            </div>
+            <a class="fav"><i class="far fa-heart"></i></a>
+            <a class="close" href="#"></a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
       <div class="nav">
 
         <div class="nav-info">
@@ -25,20 +59,28 @@
         </div>
         <div class="nav-img">
 
-          <img src="./profile.png"/>
+          <img src="img/profile.png"/>
           <div class="dropdown-content">
 
             <a href="index.html"><i class="fas fa-sign-out-alt"></i></a>
-            <a href="favorites.html"><i class="fas fa-heart"></i></a>
+            <a href="interest.html"><i class="fas fa-heart"></i></a>
 
           </div>
 
         </div>
 
       </div>
-      <a class="main-button" href="#"></a>
+      <a class="main-button" id="openbtn" href="#"></a>
 
     </section>
+
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"></script>
+      <script src="js/jquery.stellar.min.js"></script>
+      <script>$.stellar();</script>
+    <script src="script.js"></script>
 
   </body>
 

@@ -25,7 +25,7 @@ body {
 
   height: 100vh;
   width: 100%;
-  background-image: url('img/bk.png');
+  background-image: url('../img/bk.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -93,7 +93,7 @@ body {
 
   display: none;
   position: absolute;
-  background-image: url('img/dropdown.png');
+  background-image: url('../img/dropdown.png');
   background-size: cover;
   width: 54px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -144,7 +144,7 @@ body {
   background-color: #ffffff;
   border-radius: 100px;
   position: absolute;
-  background-image: url('img/mainbutton.png');
+  background-image: url('../img/mainbutton.png');
   background-size: cover;
   cursor: pointer;
   transition: all 0.4s ease;
@@ -157,5 +157,193 @@ body {
 -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
 box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
   transition: all 0.4s ease;
+
+}
+
+/* Modal */
+
+.modal {
+
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+
+}
+
+.modal-content {
+
+  background-color: #ffffff;
+  margin: 0 auto;
+  margin-top: 40px;
+  border-radius: 6px;
+  width: 40%;
+
+}
+
+.modal .modal-content .title {
+
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.modal .modal-content .title h1 {
+
+  text-align: left;
+  font-family: Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  width: 60%;
+  color: #212121;
+
+}
+
+.modal .modal-content .modal-data {
+
+  background-color: #eee;
+  width: 100%;
+  border-radius: 6px;
+
+}
+
+.modal .modal-content .inner-modal-data {
+
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+}
+
+.modal .modal-content .inner-modal-data h2 {
+
+  font-family: Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  width: 60%;
+  color: #212121;
+  margin: 0 auto;
+  text-align: center;
+
+}
+
+.modal .modal-content .inner-modal-data h3 {
+
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  width: 60%;
+  color: #212121;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 20px;
+
+}
+
+.modal .modal-content .inner-modal-data p {
+
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  width: 60%;
+  color: #212121;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 40px;
+
+}
+
+.modal .modal-content .inner-modal-data .slidecontainer {
+
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 40px;
+
+}
+
+.modal .modal-content .inner-modal-data .slidecontainer .slider {
+
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  background-color: #ffffff;
+  height: 10px;
+  width: 50%;
+
+}
+
+.slider::-webkit-slider-thumb {
+
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #212121;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #212121;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.modal .modal-content .inner-modal-data .fav {
+
+  background-color: #fff;
+  border-radius: 50%;
+  height: 38px;
+  width: 38px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.4s ease;
+
+}
+
+.modal .modal-content .inner-modal-data .close {
+
+  height: 44px;
+  width: 146px;
+  background-color: #212121;
+  border-radius: 100px;
+  display: block;
+  background-image: url('../img/closebtn.png');
+  background-size: cover;
+  transition: all 0.4s ease;
+  margin: 0 auto;
+
+}
+
+.modal .modal-content .modal-data a:hover {
+
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+  transition: all 0.4s ease;
+
+}
+
+@media only screen and (max-width: 1000px) {
+
+  .modal-content {
+
+    width: 90%;
+
+  }
 
 }
