@@ -1,3 +1,7 @@
+import React, { Component } from 'react';
+import bk from "./img/bk.png";
+import "./login.css";
+import loginbtn from "./img/loginbtn.png";
 var LoginPart = React.createClass({
     render: function() {
       return (

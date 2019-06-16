@@ -1,33 +1,140 @@
-.App {
-  text-align: center;
+/* Universal */
+
+html, body {
+
+  margin: 0;
+  padding: 0;
+
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+html {
+
+  font-size: 18px;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+
+  background-color: #212121;
+
+}
+
+/* Main */
+
+.main {
+
+  height: 100vh;
+  width: 100%;
+  background-image: url(./img/bk.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+
 }
 
-.App-link {
-  color: #61dafb;
+/* Content */
+
+.content-box {
+
+  height: 55%;
+  width: 45%;
+  background-color: #f2f2f2;
+  border-radius: 6px;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.content-box .welcome {
+
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.content-box .welcome h1 {
+
+  font-family: Helvetica, sans-serif;
+  font-weight: 700;
+  color: #212121;
+  text-align: center;
+  font-size: 30px;
+
+}
+
+.content-box .welcome p {
+
+  font-family: Helvetica, sans-serif;
+  font-weight: 400;
+  color: #212121;
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+  font-size: 18px;
+
+}
+
+.content-box .action {
+
+  height: 30%;
+  background-color: #D8D8D8;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.content-box .action a {
+
+  background-size: cover;
+  height: 58px;
+  width: 194px;
+  display: block;
+  margin: 15px;
+  transition: all 0.4s ease;
+  border-radius: 100px;
+
+}
+
+.content-box .action a:hover {
+
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+  transition: all 0.4s ease;
+
+}
+
+.content-box .action a:nth-child(1) {
+
+  background-image: url(./img/signupbtn.png);
+}
+
+.content-box .action a:nth-child(2) {
+
+  background-image: url(./img/loginbtn.png);
+
+}
+
+@media only screen and (max-width: 1000px) {
+
+  .content-box {
+
+    height: 90%;
+    width: 85%;
+
+
   }
-  to {
-    transform: rotate(360deg);
+
+  .content-box .action {
+
+    flex-direction: column;
+
   }
+
 }

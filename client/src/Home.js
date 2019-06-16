@@ -1,3 +1,5 @@
+import React, { Component } from 'react';
+
 var HomePart = React.createClass({
     render: function() {
       return (
