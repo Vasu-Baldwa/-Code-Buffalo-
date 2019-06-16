@@ -17,7 +17,8 @@ const UserType = new GraphQLObjectType({
         userID: { type: GraphQLString },
         passwd: { type: GraphQLString },
         avgPrice: { type: GraphQLFloat },
-        priceN: { type: GraphQLInt }
+        priceN: { type: GraphQLInt },
+        favorites: { type: GraphQLString },
     })
 });
 

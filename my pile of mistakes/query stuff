@@ -6,6 +6,7 @@
     passwd
     avgPrice
     priceN
+    favorites
   }
 }
 
@@ -17,12 +18,14 @@ mutation {
     userID: "string",
     passwd: "string",
     avgPrice: 0.x,
-    priceN: int
+    priceN: int,
+    favorites: "string"
   ),
   {
     userID
     passwd
     avgPrice
     priceN
+    favorites
   }
 }
